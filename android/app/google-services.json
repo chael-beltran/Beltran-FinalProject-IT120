@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "920370823064",
+    "project_id": "beltran-snackpack",
+    "storage_bucket": "beltran-snackpack.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920370823064:android:3093bd5998cc7e55e635ed",
+        "android_client_info": {
+          "package_name": "com.snackpack.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-K5_Yb7mmkcVfekixpuPRouVuPLNKSUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

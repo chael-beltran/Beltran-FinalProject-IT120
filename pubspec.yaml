@@ -1,0 +1,69 @@
+name: tm_flutter_app
+description: A new Flutter project
+publish_to: 'none' # Remove this if you plan to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Firebase
+  firebase_core: ^2.32.0
+  firebase_database: ^10.5.6
+  cloud_firestore: ^4.15.0
+
+  # 📷 Camera plugin (latest major stable)
+  camera: ^0.11.3
+
+  # 📊 Chart library
+  fl_chart: ^0.68.0
+
+  # 🔐 Permission manager
+  permission_handler: ^12.0.1
+
+  # 🤖 TensorFlow Lite Flutter binding
+  tflite_flutter: ^0.12.1
+  
+  # 🖼️ Image processing library
+  image: ^4.2.0
+
+  # Other Flutter dependencies
+  cupertino_icons: ^1.0.8
+  
+  # 🔗 URL launcher for external links
+  url_launcher: ^6.2.4
+  
+  # 🖼️ Image picker for gallery selection
+  image_picker: ^1.0.7
+  
+  # 💾 Persistent local storage
+  shared_preferences: ^2.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # 🧹 Linting rules for clean code
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/model/labels_50.txt
+    - assets/model/model_50.tflite
+    # Snack images
+    - assets/img/Piattos_Cheese.png
+    - assets/img/Nova_Country_Cheddar.png
+    - assets/img/V-Cut_Barbecue.png
+    - assets/img/Chippy_Chili&Cheese.png
+    - assets/img/Mr._Chips_Corn&Cheese.png
+    - assets/img/Oishi_Spicy_Seafood_Curls.png
+    - assets/img/Oishi_Onion_Rings.png
+    - assets/img/Oishi_Fish_Crackers.png
+    - assets/img/Oishi_Cracklings_Salt&Vinegar.png
+    - assets/img/Clover_Chips_Ham&Cheese.png
