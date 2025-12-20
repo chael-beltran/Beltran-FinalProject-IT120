@@ -14,109 +14,116 @@
 
 <div align="center">
 
-## 📱 Project Overview
+## Project Overview
 
-<table>
-<tr>
-<td>
+</div>
 
 **Snack-Pack App** is a mobile image classification application built with **Flutter** that leverages **TensorFlow Lite** machine learning to identify and classify **10 different varieties of popular snack chips** in real-time.
 
 The app allows users to scan chip packages using their device camera or select images from their gallery. Once scanned, the trained ML model processes the image and returns a prediction with a confidence score. Results are displayed with detailed analytics including bar graphs and line charts, and can be saved to Firebase for history tracking.
 
-### 🎯 Key Capabilities
-
-| Feature | Description |
-|---------|-------------|
-| 📷 **Real-time Scanning** | Live camera preview with instant classification |
-| 🤖 **ML-Powered Recognition** | TensorFlow Lite model trained on 10 chip varieties |
-| 📊 **Detailed Analytics** | Confidence scores, bar graphs, and line charts |
-| 💾 **Cloud Storage** | Firebase Firestore & Realtime Database integration |
-| 📜 **Scan History** | Track and filter all previous classification results |
-| 🏷️ **Category Filtering** | Filter by flavor: Cheese, Cheddar, BBQ, Spicy, etc. |
-
-</td>
-</tr>
-</table>
-
-</div>
-
 ---
 
 <div align="center">
 
-## 🔄 Application Flow
+## Application Flow
 
-┌─────────────────────────────────────────────────────────────────────────────────┐ │ SNACK-PACK APP FLOW │ └─────────────────────────────────────────────────────────────────────────────────┘
+</div>
 
- ┌──────────────┐          ┌──────────────┐          ┌──────────────┐
- │   📱 HOME    │          │   📷 SCAN    │          │  📜 HISTORY  │
- │    PAGE      │◄────────►│    PAGE      │◄────────►│    PAGE      │
- └──────┬───────┘          └──────┬───────┘          └──────────────┘
-        │                         │                          ▲
-        │                         │                          │
-        ▼                         ▼                          │
- ┌──────────────┐          ┌──────────────┐                  │
- │  📋 CLASS    │          │  📸 CAPTURE  │                  │
- │   DETAILS    │          │   IMAGE      │                  │
- └──────────────┘          └──────┬───────┘                  │
-                                  │                          │
-                                  ▼                          │
-                           ┌──────────────┐                  │
-                           │  🤖 ML MODEL │                  │
-                           │  PREDICTION  │                  │
-                           └──────┬───────┘                  │
-                                  │                          │
-                                  ▼                          │
-                           ┌──────────────┐                  │
-                           │  📊 RESULT   │                  │
-                           │    PAGE      │                  │
-                           └──────┬───────┘                  │
-                                  │                          │
-                                  ▼                          │
-                           ┌──────────────┐                  │
-                           │  💾 SAVE TO  │                  │
-                           │   FIREBASE   │──────────────────┘
-                           └──────┬───────┘
-                                  │
-                    ┌─────────────┴─────────────┐
-                    ▼                           ▼
-             ┌─────────────┐             ┌─────────────┐
-             │  FIRESTORE  │             │ REALTIME DB │
-             │  (History)  │             │   (Live)    │
-             └─────────────┘             └─────────────┘
+```mermaid
+graph TB
+    Start([User Opens App]) --> Home[Home Page]
+    
+    Home --> |View Classes| Classes[Class Details Page]
+    Home --> |Start Scanning| Scan[Scan Page]
+    Home --> |View Records| History[History Page]
+    
+    Scan --> Camera{Image Source}
+    Camera --> |Camera| Capture[Capture New Image]
+    Camera --> |Gallery| Gallery[Select from Gallery]
+    
+    Capture --> Process[Image Processing]
+    Gallery --> Process
+    
+    Process --> ML[TensorFlow Lite Model]
+    ML --> |Inference| Predict[Generate Predictions]
+    
+    Predict --> Result[Result Page]
+    Result --> |Display| Analytics[Show Analytics]
+    Analytics --> |Confidence Scores| Charts[Bar & Line Charts]
+    
+    Result --> Save{Save Result?}
+    Save --> |Yes| Firebase[Firebase Storage]
+    Save --> |No| End1([End Session])
+    
+    Firebase --> Firestore[(Firestore Database)]
+    Firebase --> RealtimeDB[(Realtime Database)]
+    
+    Firestore --> History
+    RealtimeDB --> History
+    
+    History --> Filter[Apply Filters]
+    Filter --> |Category| FilteredResults[Filtered Results]
+    
+    FilteredResults --> End2([Continue Using App])
+    Charts --> End2
+    
+    Classes --> |Back| Home
+    History --> |Back| Home
+    Result --> |New Scan| Scan
+    
+    style Start fill:#4CAF50
+    style End1 fill:#F44336
+    style End2 fill:#2196F3
+    style ML fill:#FF9800
+    style Firebase fill:#FFC107
+    style Firestore fill:#9C27B0
+    style RealtimeDB fill:#9C27B0
+```
 
----        
+<details>
+<summary><b>View Detailed Workflow Steps</b></summary>
+
+<br>
+
+### User Journey
 
 <table>
 <tr>
-<td align="center" width="200">
-<h3>1️⃣</h3>
-<b>User Scans Image</b><br/>
-<sub>Camera capture or gallery selection</sub>
+<td align="center" width="20%">
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Index%20Pointing%20Up.png" alt="Step 1" width="40" height="40" />
+<h4>Step 1</h4>
+<b>Launch Application</b><br/>
+<sub>User opens the app and navigates to the scan page</sub>
 </td>
-<td align="center" width="50">➡️</td>
-<td align="center" width="200">
-<h3>2️⃣</h3>
-<b>ML Model Predicts</b><br/>
-<sub>TensorFlow Lite processes image</sub>
+<td align="center" width="20%">
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Victory%20Hand.png" alt="Step 2" width="40" height="40" />
+<h4>Step 2</h4>
+<b>Capture Image</b><br/>
+<sub>Take a photo or select from gallery</sub>
 </td>
-<td align="center" width="50">➡️</td>
-<td align="center" width="200">
-<h3>3️⃣</h3>
-<b>Flutter Gets Result</b><br/>
-<sub>Displays prediction & analytics</sub>
+<td align="center" width="20%">
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/OK%20Hand.png" alt="Step 3" width="40" height="40" />
+<h4>Step 3</h4>
+<b>Process & Classify</b><br/>
+<sub>ML model analyzes the image</sub>
 </td>
-<td align="center" width="50">➡️</td>
-<td align="center" width="200">
-<h3>4️⃣</h3>
-<b>Save to Firebase</b><br/>
-<sub>Firestore + Realtime Database</sub>
+<td align="center" width="20%">
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Vulcan%20Salute.png" alt="Step 4" width="40" height="40" />
+<h4>Step 4</h4>
+<b>View Results</b><br/>
+<sub>See predictions with analytics</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Hand%20with%20Fingers%20Splayed.png" alt="Step 5" width="40" height="40" />
+<h4>Step 5</h4>
+<b>Save & Track</b><br/>
+<sub>Store results in Firebase for history</sub>
 </td>
 </tr>
 </table>
 
-</div>
+</details>
 
 ---
 
@@ -146,7 +153,7 @@ The application can identify the following **10 chip varieties**:
 </td>
 <td align="center" width="180">
 <img src="10-Class-img/Oishi_Cracklings_Salt&Vinegar.png" width="100" alt="Oishi Cracklings Salt & Vinegar"/><br/>
-<sub><b>Oishi Cracklings Salt & Vinegar</b></sub>
+<sub><b>Oishi Cracklings</b></sub>
 </td>
 </tr>
 <tr>
@@ -181,7 +188,7 @@ The application can identify the following **10 chip varieties**:
 
 **Student Name:** Beltran, Michael James
 
-**Course:** IT120 - Mobile Application Development
+**Course:** IT120 - Integrative Programming and Technologies 2
 
 **Project:** Final Project - Snack Pack Image Classification App
 
@@ -189,7 +196,7 @@ The application can identify the following **10 chip varieties**:
 
 <div align="center">
 
-## Application Screenshots
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Camera%20with%20Flash.png" alt="Screenshots" width="30" height="30" /> Application Screenshots
 
 <table>
 <tr>
@@ -231,7 +238,7 @@ The application can identify the following **10 chip varieties**:
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" width="80" height="80" alt="Flutter Code"/>
 <br/><br/>
 <h3>Snack-Pack-App</h3>
-<p><em>Complete Flutter application source code with TensorFlow Lite integration</em></p>
+<p><em>Complete Flutter application source code.</em></p>
 <br/>
 <a href="./Snack-Pack-App/">
 <img src="https://img.shields.io/badge/View_Source_Code-0078D4?style=for-the-badge&logo=github&logoColor=white" alt="View Source Code"/>
@@ -296,7 +303,7 @@ The application can identify the following **10 chip varieties**:
 
 <div align="center">
 
-## Developer Profile
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Technologist.png" alt="Developer" width="30" height="30" /> Developer Profile
 
 <table>
 <tr>
@@ -307,7 +314,7 @@ The application can identify the following **10 chip varieties**:
 <h3>Connect With Me</h3>
 <p><em>Explore more of my projects and contributions</em></p>
 <br/>
-<a href="https://github.com/chael-beltran/chael-beltran.git">
+<a href="https://github.com/chael-beltran">
 <img src="https://img.shields.io/badge/Click_here_to_see_my_GitHub_profile-0078D4?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile"/>
 </a>
 <br/><br/>
@@ -346,7 +353,7 @@ The application can identify the following **10 chip varieties**:
 <sub><b>Android SDK</b></sub>
 </td>
 <td align="center" width="120">
-<img src="https://3.bp.blogspot.com/-VVp3WvJvl84/X0Ber52cqRI/AAAAAAAAPmQ/RehZMCLV8U4xBjnLNPSVrw_0L8aJPZkMQCK4BGAsYHg/s1600/studio-icon.svg" width="50" height="50" alt="Android Studio"/><br/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Android_Studio_icon_%282023%29.svg" width="50" height="50" alt="Android Studio"/><br/>
 <sub><b>Android Studio</b></sub>
 </td>
 <td align="center" width="120">
@@ -364,11 +371,12 @@ The application can identify the following **10 chip varieties**:
 
 ---
 
-<!-- Footer -->
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=14,20,24&height=80&section=footer&text=©%202025%20Michael%20James%20Beltran%20%7C%20IT120%20Final%20Project&fontSize=16&fontColor=fff&fontAlignY=50" />
-</p>
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,16,18,20&height=120&section=footer&text=Built%20with%20Flutter%20and%20TensorFlow%20Lite&fontSize=20&fontColor=fff&animation=twinkling&fontAlignY=70&desc=©%202025%20Michael%20James%20Beltran%20|%20IT120%20Final%20Project&descSize=12&descAlignY=88" />
 
 <p align="center">
-  <sub>Built with ❤️ using <b>Flutter</b> and <b>TensorFlow Lite</b></sub>
+  <sub>Crafted with precision and passion for mobile development</sub>
 </p>
+
+</div>
