@@ -141,7 +141,7 @@ The application can identify the following **10 chip varieties**:
 </td>
 <td align="center" width="180">
 <img src="10-Class-img/Clover_Chips_Ham&Cheese.png" width="100" alt="Clover Chips Ham & Cheese"/><br/>
-<sub><b>Clover Chips Ham & Cheese</b></sub>
+<sub><b>Clover Chips</b></sub>
 </td>
 <td align="center" width="180">
 <img src="10-Class-img/Mr._Chips_Corn&Cheese.png" width="100" alt="Mr. Chips Corn & Cheese"/><br/>
@@ -213,7 +213,7 @@ The application can identify the following **10 chip varieties**:
 <img src="Snack-Pack-Screenshots/Scan-Page.jpg" width="140" alt="Scan Page"/>
 </td>
 <td align="center">
-<b>Classification Result</b><br/>
+<b>Scan Result</b><br/>
 <img src="Snack-Pack-Screenshots/Classification-Result.jpg" width="140" alt="Classification Result"/>
 </td>
 <td align="center">
@@ -374,9 +374,5 @@ The application can identify the following **10 chip varieties**:
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,16,18,20&height=120&section=footer&text=Built%20with%20Flutter%20and%20TensorFlow%20Lite&fontSize=20&fontColor=fff&animation=twinkling&fontAlignY=70&desc=©%202025%20Michael%20James%20Beltran%20|%20IT120%20Final%20Project&descSize=12&descAlignY=88" />
-
-<p align="center">
-  <sub>Crafted with precision and passion for mobile development</sub>
-</p>
 
 </div>
