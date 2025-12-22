@@ -115,7 +115,7 @@ graph TB
 <sub>See predictions with analytics</sub>
 </td>
 <td align="center" width="20%">
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Hand%20with%20Fingers%20Splayed.png" alt="Step 5" width="40" height="40" />
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Raising%20Hands.png" alt="Step 5" width="40" height="40" />
 <h4>Step 5</h4>
 <b>Save & Track</b><br/>
 <sub>Store results in Firebase for history</sub>
