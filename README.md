@@ -229,6 +229,39 @@ The application can identify the following **10 chip varieties**:
 
 <div align="center">
 
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Camera%20with%20Flash.png" alt="Database" width="30" height="30" /> Firebase Database Screenshots
+
+<table>
+<tr>
+<td align="center" width="470">
+<br/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="40" height="40" alt="Firestore"/>
+<br/><br/>
+<h4>Firestore Database</h4>
+<img src="Firebase_Database-Screenshots/Firestore-screenshot.png" width="430" alt="Firestore Database"/>
+<br/>
+<sub><em>Cloud Firestore – Scan History and Result Records</em></sub>
+<br/><br/>
+</td>
+<td align="center" width="470">
+<br/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="40" height="40" alt="Realtime Database"/>
+<br/><br/>
+<h4>Realtime Database</h4>
+<img src="Firebase_Database-Screenshots/Realtime-screenshot.png" width="430" alt="Realtime Database"/>
+<br/>
+<sub><em>Firebase Realtime Database – Latest Scan Result (Real-Time Update)</em></sub>
+<br/><br/>
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+<div align="center">
+
 ## Project Source Code
 
 <table>
